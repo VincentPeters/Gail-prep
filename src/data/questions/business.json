@@ -1,0 +1,242 @@
+[
+  {
+    "id": "busi-01",
+    "domain": "business",
+    "difficulty": "easy",
+    "question": "A leader is selecting the first generative AI project for the company. Which approach best prioritizes candidate use cases?",
+    "options": [
+      "Rank use cases by business value combined with feasibility, and start with a high-value, high-feasibility option",
+      "Choose the use case that uses the newest model regardless of impact",
+      "Pick the most technically ambitious idea to impress leadership",
+      "Select whichever project the largest team wants to build"
+    ],
+    "answer": 0,
+    "explanation": "Use cases should be prioritized on two axes: business value and feasibility. The best first project sits in the high-value, high-feasibility quadrant, delivering a quick win that builds momentum and confidence.",
+    "topic": "Use-case selection"
+  },
+  {
+    "id": "busi-02",
+    "domain": "business",
+    "difficulty": "easy",
+    "question": "Which of the following is a common, well-established generative AI business use case?",
+    "options": [
+      "Manufacturing physical microchips",
+      "Guaranteeing 100% factually correct answers",
+      "Summarizing long documents and meeting transcripts",
+      "Replacing all human judgment in legal rulings"
+    ],
+    "answer": 2,
+    "explanation": "Summarization is a proven, high-value gen AI pattern alongside content creation, customer service, code assistance, enterprise search, data analysis, and translation.",
+    "topic": "Use-case selection"
+  },
+  {
+    "id": "busi-03",
+    "domain": "business",
+    "difficulty": "easy",
+    "question": "Which of these is one of Google's AI Principles?",
+    "options": [
+      "Maximize data collection at all costs",
+      "Avoid creating or reinforcing unfair bias",
+      "Prioritize speed over safety testing",
+      "Keep model behavior secret from users"
+    ],
+    "answer": 1,
+    "explanation": "Avoiding the creation or reinforcement of unfair bias is one of Google's AI Principles, along with being socially beneficial, safe, accountable to people, and incorporating privacy by design.",
+    "topic": "Google's AI Principles"
+  },
+  {
+    "id": "busi-04",
+    "domain": "business",
+    "difficulty": "easy",
+    "question": "What does 'human-in-the-loop' mean in a responsible AI context?",
+    "options": [
+      "Humans write all the training data by hand",
+      "AI systems operate fully autonomously with no oversight",
+      "Only engineers are allowed to use the AI tool",
+      "People review and approve high-stakes AI output before it is acted on"
+    ],
+    "answer": 3,
+    "explanation": "Human-in-the-loop means keeping qualified people reviewing and approving consequential AI output. AI recommends; a human decides on high-stakes matters.",
+    "topic": "Human-in-the-loop"
+  },
+  {
+    "id": "busi-05",
+    "domain": "business",
+    "difficulty": "easy",
+    "question": "Which metric would best measure the value of a customer-service virtual agent?",
+    "options": [
+      "Number of model parameters",
+      "Time-to-resolution and customer satisfaction (CSAT)",
+      "Size of the context window",
+      "Number of GPUs in the data center"
+    ],
+    "answer": 1,
+    "explanation": "KPIs should map to business outcomes. For customer service, time-to-resolution and CSAT directly measure the value delivered, unlike technical model attributes.",
+    "topic": "KPIs and ROI"
+  },
+  {
+    "id": "busi-06",
+    "domain": "business",
+    "difficulty": "easy",
+    "question": "What is a key advantage of using an enterprise platform like Vertex AI over a free consumer chatbot for business data?",
+    "options": [
+      "It is always completely free",
+      "It removes the need to define any KPIs",
+      "It provides governance controls such as access management, audit logging, and data not being used to train public models",
+      "It guarantees the model never hallucinates"
+    ],
+    "answer": 2,
+    "explanation": "Enterprise platforms give you controls consumer tools don't: access controls, audit logging, data-residency options, and assurance that your prompts and data aren't used to train public models.",
+    "topic": "Governance"
+  },
+  {
+    "id": "busi-07",
+    "domain": "business",
+    "difficulty": "medium",
+    "question": "A bank wants to use gen AI to help decide loan approvals. Regulators require the bank to explain why any applicant was declined. Which responsible-AI dimension is most directly at stake?",
+    "options": [
+      "Sustainability",
+      "Explainability",
+      "Localization",
+      "Latency"
+    ],
+    "answer": 1,
+    "explanation": "Explainability is the ability to understand why a model produced a specific decision. It is essential in regulated settings like lending where decisions must be justified to applicants and regulators.",
+    "topic": "Transparency and explainability"
+  },
+  {
+    "id": "busi-08",
+    "domain": "business",
+    "difficulty": "medium",
+    "question": "A hiring team notices their AI screening tool recommends fewer candidates from certain demographic groups. Under Google's AI Principles, what should the leader do?",
+    "options": [
+      "Ignore it because the model is statistically optimized",
+      "Hide the tool's use from applicants to avoid complaints",
+      "Increase the model size to fix the pattern",
+      "Investigate and remediate the unfair bias, testing across groups and improving the data and monitoring"
+    ],
+    "answer": 3,
+    "explanation": "Google's AI Principles call for avoiding the creation or reinforcement of unfair bias. The leader must investigate, test across populations, remediate the data, and monitor outcomes.",
+    "topic": "Responsible AI"
+  },
+  {
+    "id": "busi-09",
+    "domain": "business",
+    "difficulty": "medium",
+    "question": "An employee wants to paste confidential product roadmaps into a free public chatbot to summarize them. What is the primary concern?",
+    "options": [
+      "Proprietary and sensitive data could be exposed or used to train public models; an enterprise platform with data governance should be used instead",
+      "The summary might be too short",
+      "The chatbot will be too slow",
+      "The employee needs a larger context window"
+    ],
+    "answer": 0,
+    "explanation": "Confidential data in consumer tools risks leakage and may be used for training. Sensitive data belongs on an enterprise platform (e.g., Vertex AI) with proper data governance and controls.",
+    "topic": "Data governance"
+  },
+  {
+    "id": "busi-10",
+    "domain": "business",
+    "difficulty": "medium",
+    "question": "Which cost is most often underestimated when calculating the total cost of ownership (TCO) of a gen AI solution?",
+    "options": [
+      "The purchase price of the model only",
+      "Change management: training, adoption, and process redesign",
+      "The color of the user interface",
+      "The number of vowels in the prompts"
+    ],
+    "answer": 1,
+    "explanation": "TCO includes compute, data, and integration, but change management (training employees, driving adoption, redesigning processes) is frequently underestimated and can determine success or failure.",
+    "topic": "TCO and ROI"
+  },
+  {
+    "id": "busi-11",
+    "domain": "business",
+    "difficulty": "medium",
+    "question": "A malicious user embeds hidden instructions in a document that the AI later processes, causing it to ignore its guardrails and leak data. What is this attack called?",
+    "options": [
+      "Hallucination",
+      "Overfitting",
+      "Prompt injection",
+      "Fine-tuning"
+    ],
+    "answer": 2,
+    "explanation": "Prompt injection is a security risk where malicious instructions hidden in inputs manipulate a model into unsafe behavior such as ignoring guardrails or leaking data. Google's SAIF helps address such risks.",
+    "topic": "Security"
+  },
+  {
+    "id": "busi-12",
+    "domain": "business",
+    "difficulty": "medium",
+    "question": "A company must ensure customer data stays within a specific country's borders due to local law. Which governance concept applies?",
+    "options": [
+      "Data residency and sovereignty",
+      "Context window",
+      "Tokenization",
+      "Prompt engineering"
+    ],
+    "answer": 0,
+    "explanation": "Data residency and sovereignty concern where data is stored and processed and which jurisdiction's laws apply. Enterprise platforms offer data-residency options to meet such requirements.",
+    "topic": "Governance"
+  },
+  {
+    "id": "busi-13",
+    "domain": "business",
+    "difficulty": "medium",
+    "question": "A team is deciding whether to build a custom gen AI solution or buy an existing product. When does building (or heavily customizing) make the most sense?",
+    "options": [
+      "When the use case is generic and not a competitive differentiator",
+      "Whenever a free tool exists",
+      "When leadership wants the cheapest possible upfront option",
+      "When the use case is core to the company's advantage and needs deep integration and data control"
+    ],
+    "answer": 3,
+    "explanation": "Build (or heavily customize on a platform) when the use case is a core differentiator requiring deep integration and control over data and models. Buy for speed and non-differentiating problems.",
+    "topic": "Build vs. buy"
+  },
+  {
+    "id": "busi-14",
+    "domain": "business",
+    "difficulty": "hard",
+    "question": "A startup proposes selling its gen AI system for mass surveillance that would violate internationally accepted norms. According to Google's stated position on AI applications, how should such a use be treated?",
+    "options": [
+      "It falls into the category of applications Google will not pursue",
+      "Pursue it if it is profitable",
+      "It is acceptable as long as it is technically feasible",
+      "It only matters if a regulator objects first"
+    ],
+    "answer": 0,
+    "explanation": "Google names applications it will not pursue, including surveillance that violates internationally accepted norms, weapons, technologies causing overall harm, and uses contravening international law and human rights.",
+    "topic": "Google's AI Principles"
+  },
+  {
+    "id": "busi-15",
+    "domain": "business",
+    "difficulty": "hard",
+    "question": "An executive wants to scale a gen AI pilot company-wide. Adoption has stalled: employees distrust the outputs and don't know how to use the tool. Which change-management action best addresses this?",
+    "options": [
+      "Remove all human review to force reliance on the tool",
+      "Switch to a larger model and hope adoption improves",
+      "Invest in upskilling and training, secure visible executive sponsorship, and measure outcomes to build trust",
+      "Cancel the program because AI is not ready"
+    ],
+    "answer": 2,
+    "explanation": "Adoption is a people problem. Executive sponsorship, employee upskilling, fostering an AI-ready culture, and measuring outcomes build the trust and capability needed to scale successfully.",
+    "topic": "Change management"
+  },
+  {
+    "id": "busi-16",
+    "domain": "business",
+    "difficulty": "hard",
+    "question": "A marketing team is worried that AI-generated images might reproduce copyrighted material and that ownership of the output is unclear. Which risk category does this represent, and what is a sound leadership response?",
+    "options": [
+      "Latency risk; buy faster hardware",
+      "Sustainability risk; reduce compute usage",
+      "Bias risk; diversify the training data",
+      "Intellectual property and copyright risk; establish policy on provenance, usage rights, and human review of outputs"
+    ],
+    "answer": 3,
+    "explanation": "Ownership of AI-generated content and the provenance of training data are intellectual-property and copyright concerns. Leaders should set governance policy on usage rights, provenance, and human review.",
+    "topic": "IP and copyright"
+  }
+]

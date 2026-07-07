@@ -1,0 +1,16 @@
+{
+  "name": "gail-prep",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Companion learning site for the Google Cloud Generative AI Leader (GAIL) certification — study notes, quizzes, timed mock exams, and flashcards.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  }
+}

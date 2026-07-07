@@ -1,0 +1,110 @@
+[
+  {
+    "id": "offr-fc-01",
+    "domain": "offerings",
+    "front": "Gemini",
+    "back": "Google's family of natively multimodal foundation models (text, images, audio, video, code). Powers the Gemini app and is available via API through Google AI Studio and Vertex AI."
+  },
+  {
+    "id": "offr-fc-02",
+    "domain": "offerings",
+    "front": "Gemini Flash vs. Gemini Pro",
+    "back": "Pro = the most capable variant for complex reasoning, but slower and pricier. Flash = fast, low-cost, ideal for high-volume, latency-sensitive tasks. Same model family — pick capability vs. speed/cost."
+  },
+  {
+    "id": "offr-fc-03",
+    "domain": "offerings",
+    "front": "Google AI Studio",
+    "back": "Fast, developer/consumer-friendly access to Gemini via an API key. Ideal for prototyping and quick experiments. Not the enterprise-controls platform (that's Vertex AI)."
+  },
+  {
+    "id": "offr-fc-04",
+    "domain": "offerings",
+    "front": "Vertex AI",
+    "back": "Google Cloud's enterprise, fully-managed AI/ML platform. Same models as Google AI Studio, plus security, governance, IAM, data residency, MLOps, and scalability for production."
+  },
+  {
+    "id": "offr-fc-05",
+    "domain": "offerings",
+    "front": "Vertex AI Studio",
+    "back": "The workspace within Vertex AI to prompt, tune, test, and evaluate models before deploying them. Don't confuse with Google AI Studio (the separate prototyping tool)."
+  },
+  {
+    "id": "offr-fc-06",
+    "domain": "offerings",
+    "front": "Model Garden",
+    "back": "Vertex AI's catalog of 100+ models to discover, test, and deploy: Google first-party (Gemini, Imagen, Veo, Chirp, Lyria), open models (Gemma), and third-party/partner models (Anthropic's Claude, Meta's Llama)."
+  },
+  {
+    "id": "offr-fc-07",
+    "domain": "offerings",
+    "front": "Gemma",
+    "back": "Google's family of open, lightweight models you can download and run yourself, including on your own infrastructure. Contrast with Gemini, which is offered as a hosted/managed model."
+  },
+  {
+    "id": "offr-fc-08",
+    "domain": "offerings",
+    "front": "Imagen",
+    "back": "Google's first-party model for generating and editing images from text prompts."
+  },
+  {
+    "id": "offr-fc-09",
+    "domain": "offerings",
+    "front": "Veo",
+    "back": "Google's first-party model for generating video from text or images."
+  },
+  {
+    "id": "offr-fc-10",
+    "domain": "offerings",
+    "front": "Chirp",
+    "back": "Google's first-party speech/audio model for capabilities like speech-to-text and text-to-speech (voice)."
+  },
+  {
+    "id": "offr-fc-11",
+    "domain": "offerings",
+    "front": "Vertex AI Agent Builder",
+    "back": "Toolkit to build AI agents and search/conversational apps grounded in your own data, often with little custom code. An agent understands a goal, reasons, uses tools/data, and takes actions."
+  },
+  {
+    "id": "offr-fc-12",
+    "domain": "offerings",
+    "front": "Vertex AI Search",
+    "back": "Enterprise search and grounding/retrieval over your own data — Google's managed RAG (retrieval-augmented generation). Finds relevant info in your documents and feeds it to the model."
+  },
+  {
+    "id": "offr-fc-13",
+    "domain": "offerings",
+    "front": "Grounding with Google Search",
+    "back": "Connects Gemini to fresh, real-world web results to reduce hallucination and overcome the knowledge cutoff, anchoring answers to current, verifiable public information."
+  },
+  {
+    "id": "offr-fc-14",
+    "domain": "offerings",
+    "front": "Gemini for Google Workspace",
+    "back": "AI embedded in Docs, Gmail, Sheets, Slides, and Meet — drafting, summarizing, and generating content for everyday knowledge workers."
+  },
+  {
+    "id": "offr-fc-15",
+    "domain": "offerings",
+    "front": "Gemini Code Assist",
+    "back": "Part of Gemini for Google Cloud: AI help for developers to write, explain, and review code. (Cloud Assist similarly helps design and operate cloud environments.)"
+  },
+  {
+    "id": "offr-fc-16",
+    "domain": "offerings",
+    "front": "NotebookLM",
+    "back": "A grounded research/notes assistant that answers ONLY from the sources you upload and cites them (not the open web). Features include Audio Overviews. NotebookLM Enterprise adds enterprise security controls."
+  },
+  {
+    "id": "offr-fc-17",
+    "domain": "offerings",
+    "front": "TPU (Tensor Processing Unit)",
+    "back": "Google's custom-designed AI accelerator chips (ASICs), e.g. the Trillium generation, built for training and running ML models efficiently at scale. GPUs (e.g. NVIDIA) are the alternative accelerator."
+  },
+  {
+    "id": "offr-fc-18",
+    "domain": "offerings",
+    "front": "AI Hypercomputer",
+    "back": "Google's integrated supercomputing architecture combining optimized hardware (TPUs/GPUs), software, and networking into one system for training and serving large models at scale."
+  }
+]

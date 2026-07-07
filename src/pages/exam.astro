@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExamRunner from "../components/ExamRunner.astro";
+import { QUESTIONS } from "../data";
+import { EXAM_FACTS } from "../data/domains";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${base}${p}`;
+const enough = QUESTIONS.length >= 10;
+---
+
+<BaseLayout title="Mock Exam — GAIL Prep" active="exam">
+  <section class="wrap section">
+    <span class="eyebrow">Exam simulation</span>
+    <h1>Full timed mock exam</h1>
+    <p class="lead">
+      Simulate test day: {EXAM_FACTS.mockExamQuestions} questions in {EXAM_FACTS.mockExamMinutes} minutes,
+      sampled to match the official domain weighting. No feedback until you submit —
+      then you get a full scored review and a per-domain breakdown.
+    </p>
+
+    {
+      enough ? (
+        <ExamRunner pool={QUESTIONS} count={EXAM_FACTS.mockExamQuestions} />
+      ) : (
+        <div class="card card-pad">
+          <p>The question bank is still being generated. The mock exam unlocks once enough questions are available.</p>
+          <a class="btn btn-ghost" href={link("/study")}>Study in the meantime →</a>
+        </div>
+      )
+    }
+
+    <div class="exam-disclaimer">
+      <p>
+        <strong>Note:</strong> Google does not publish an official passing score for the
+        Generative AI Leader exam. This mock uses a {EXAM_FACTS.practiceTarget}% target as a
+        study benchmark only. Always confirm details on the
+        <a href="https://cloud.google.com/learn/certification/generative-ai-leader" target="_blank" rel="noopener">official certification page</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 2rem 0;
+  }
+  .lead {
+    color: var(--text-muted);
+    max-width: 65ch;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+  .exam-disclaimer {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-faint);
+    border-top: 1px solid var(--surface-border);
+    padding-top: 1rem;
+  }
+</style>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Quiz from "../../components/Quiz.astro";
+import { DOMAINS } from "../../data/domains";
+import { QUESTIONS, questionsByDomain } from "../../data";
+
+export async function getStaticPaths() {
+  const domainPaths = DOMAINS.map((d) => ({
+    params: { domain: d.id },
+    props: {
+      title: d.title,
+      short: d.short,
+      blurb: d.blurb,
+      hex: d.hex,
+      questions: questionsByDomain(d.id),
+      limit: undefined as number | undefined,
+      mixed: false,
+    },
+  }));
+  const mixed = {
+    params: { domain: "all" },
+    props: {
+      title: "Mixed Quick Quiz",
+      short: "Mixed",
+      blurb: "20 random questions drawn from all four exam domains.",
+      hex: "#a142f4",
+      questions: QUESTIONS,
+      limit: 20,
+      mixed: true,
+    },
+  };
+  return [...domainPaths, mixed];
+}
+
+const { title, short, blurb, hex, questions, limit } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${base}${p}`;
+---
+
+<BaseLayout title={`${title} Quiz — GAIL Prep`} description={blurb} active="quizzes">
+  <section class="wrap section">
+    <a class="back-link" href={link("/quizzes")}>← All quizzes</a>
+    <div class="quiz-page-head" style={`--accent-domain:${hex}`}>
+      <span class="pill dot" style={`--dot:${hex}`}>{short}</span>
+      <h1>{title} quiz</h1>
+      <p>{blurb}</p>
+    </div>
+
+    {
+      questions.length > 0 ? (
+        <Quiz questions={questions} shuffle={true} limit={limit} />
+      ) : (
+        <div class="card card-pad">
+          <p>Questions for this quiz are being generated. Check back shortly.</p>
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 1.5rem 0 2rem;
+  }
+  .back-link {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .quiz-page-head {
+    padding: 0.8rem 0 1rem;
+    border-bottom: 1px solid var(--surface-border);
+    margin-bottom: 0.5rem;
+    border-left: 0;
+  }
+  .quiz-page-head h1 {
+    margin: 0.7rem 0 0.4rem;
+  }
+  .quiz-page-head p {
+    color: var(--text-muted);
+    max-width: 62ch;
+    margin: 0;
+  }
+</style>

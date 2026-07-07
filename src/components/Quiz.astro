@@ -1,0 +1,24 @@
+---
+import type { Question } from "../data/types";
+export interface Props {
+  questions: Question[];
+  shuffle?: boolean;
+  limit?: number;
+}
+const { questions, shuffle = true, limit } = Astro.props;
+---
+
+<div
+  class="quiz card card-pad"
+  data-quiz
+  data-shuffle={String(shuffle)}
+  data-limit={limit ? String(limit) : undefined}
+>
+  <script type="application/json" is:inline set:html={JSON.stringify(questions)} />
+  <div class="quiz-mount"></div>
+</div>
+
+<script>
+  import { initQuizzes } from "../scripts/quiz";
+  initQuizzes();
+</script>

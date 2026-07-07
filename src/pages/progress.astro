@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProgressDashboard from "../components/ProgressDashboard.astro";
+---
+
+<BaseLayout title="Your Progress — GAIL Prep" active="progress">
+  <section class="wrap section">
+    <span class="eyebrow">Your progress</span>
+    <h1>Progress dashboard</h1>
+    <p class="lead">
+      Your accuracy by domain, mock-exam history, and flashcard mastery — all saved
+      privately in this browser. Nothing is uploaded anywhere.
+    </p>
+    <ProgressDashboard />
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 2rem 0;
+  }
+  .lead {
+    color: var(--text-muted);
+    max-width: 65ch;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+</style>

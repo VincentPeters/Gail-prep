@@ -1,0 +1,21 @@
+---
+import type { Flashcard } from "../data/types";
+export interface Props {
+  cards: Flashcard[];
+}
+const { cards } = Astro.props;
+---
+
+<div class="deck" data-deck>
+  <script type="application/json" is:inline set:html={JSON.stringify(cards)} />
+  <div class="deck-toolbar">
+    <button class="btn btn-ghost deck-shuffle">🔀 Shuffle</button>
+    <button class="btn btn-ghost deck-filter">Only "still learning"</button>
+  </div>
+  <div class="deck-mount"></div>
+</div>
+
+<script>
+  import { initFlashcards } from "../scripts/flashcards";
+  initFlashcards();
+</script>

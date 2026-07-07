@@ -1,0 +1,332 @@
+[
+  {
+    "id": "fund-01",
+    "domain": "fundamentals",
+    "difficulty": "easy",
+    "question": "Which statement correctly describes how the terms relate to one another?",
+    "options": [
+      "Generative AI is a broad field that contains machine learning and deep learning",
+      "Machine learning is a subset of AI, and deep learning is a subset of machine learning",
+      "Deep learning and AI are the same thing with different names",
+      "Machine learning contains AI as one of its specialized subfields"
+    ],
+    "answer": 1,
+    "explanation": "The correct nesting is AI ⊃ Machine Learning ⊃ Deep Learning ⊃ Generative AI. Machine learning is a subset of AI, and deep learning is a subset of machine learning.",
+    "topic": "AI vs ML vs Deep Learning"
+  },
+  {
+    "id": "fund-02",
+    "domain": "fundamentals",
+    "difficulty": "easy",
+    "question": "A bank uses a model to decide whether each new transaction is 'fraud' or 'not fraud'. What kind of AI is this?",
+    "options": [
+      "Generative AI, because it produces an output",
+      "Predictive/discriminative AI, because it classifies existing data",
+      "A diffusion model, because it works with financial images",
+      "Reinforcement learning, because it is rewarded for catching fraud"
+    ],
+    "answer": 1,
+    "explanation": "Assigning inputs to categories like 'fraud'/'not fraud' is classification, a predictive/discriminative task. Generative AI would instead create new content rather than label existing data.",
+    "topic": "Predictive vs Generative"
+  },
+  {
+    "id": "fund-03",
+    "domain": "fundamentals",
+    "difficulty": "easy",
+    "question": "What is the primary purpose of generative AI?",
+    "options": [
+      "To sort data into predefined categories",
+      "To create new content such as text, images, audio, or code",
+      "To store large amounts of structured data efficiently",
+      "To replace databases with neural networks"
+    ],
+    "answer": 1,
+    "explanation": "Generative AI is defined by its ability to create new content that resembles its training data. Sorting into categories is a predictive/discriminative task.",
+    "topic": "Generative AI"
+  },
+  {
+    "id": "fund-04",
+    "domain": "fundamentals",
+    "difficulty": "easy",
+    "question": "A team trains a model on emails that are each labeled 'spam' or 'not spam'. Which type of machine learning is this?",
+    "options": [
+      "Unsupervised learning",
+      "Reinforcement learning",
+      "Supervised learning",
+      "Self-supervised clustering"
+    ],
+    "answer": 2,
+    "explanation": "Learning from data that includes correct labels is supervised learning. Unsupervised learning works with unlabeled data, and reinforcement learning learns from rewards.",
+    "topic": "Types of ML"
+  },
+  {
+    "id": "fund-05",
+    "domain": "fundamentals",
+    "difficulty": "easy",
+    "question": "Which best describes a foundation model?",
+    "options": [
+      "A small model built for one narrow task and no others",
+      "A large model pre-trained on broad data that can be adapted to many tasks",
+      "A database of pre-written answers the model looks up",
+      "A model that only works with structured, tabular data"
+    ],
+    "answer": 1,
+    "explanation": "Foundation models are large, pre-trained on broad datasets, and general-purpose, so they can be adapted to many downstream tasks. That reusability is their defining trait.",
+    "topic": "Foundation models"
+  },
+  {
+    "id": "fund-06",
+    "domain": "fundamentals",
+    "difficulty": "easy",
+    "question": "An LLM confidently produces a quote and cites a study that does not actually exist. What is this called?",
+    "options": [
+      "A knowledge cutoff",
+      "A hallucination",
+      "Fine-tuning",
+      "Non-determinism"
+    ],
+    "answer": 1,
+    "explanation": "A hallucination is fluent, confident output that is factually wrong or fabricated. A knowledge cutoff refers to outdated information rather than invented content.",
+    "topic": "Hallucinations"
+  },
+  {
+    "id": "fund-07",
+    "domain": "fundamentals",
+    "difficulty": "easy",
+    "question": "What does 'inference' mean in the context of an LLM?",
+    "options": [
+      "The initial process of teaching the model on massive datasets",
+      "Using an already-trained model to generate output for a new input",
+      "Labeling raw data before training begins",
+      "Removing bias from the training data"
+    ],
+    "answer": 1,
+    "explanation": "Inference is using a trained model to produce a response for a new input — what happens each time you send a prompt. Teaching the model is training, a separate phase.",
+    "topic": "Training vs Inference"
+  },
+  {
+    "id": "fund-08",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "A retailer wants to group its customers into segments based on shopping behavior, but has no predefined categories and no labels. Which approach fits best?",
+    "options": [
+      "Supervised learning",
+      "Unsupervised learning",
+      "A diffusion model",
+      "Fine-tuning an LLM on labeled data"
+    ],
+    "answer": 1,
+    "explanation": "Discovering structure such as clusters in unlabeled data without predefined categories is unsupervised learning. Supervised learning would require labeled examples.",
+    "topic": "Types of ML"
+  },
+  {
+    "id": "fund-09",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "At the most basic level, how does an LLM generate a sentence?",
+    "options": [
+      "It retrieves the closest matching sentence from a stored database",
+      "It repeatedly predicts the most likely next token given the preceding text",
+      "It applies fixed grammar rules written by linguists",
+      "It translates the prompt into a diffusion image and reads it back"
+    ],
+    "answer": 1,
+    "explanation": "LLMs work by predicting the next token over and over, chaining those predictions into fluent text. They do not look up stored sentences or apply hand-written grammar rules.",
+    "topic": "Next-token prediction"
+  },
+  {
+    "id": "fund-10",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "Which innovation of the transformer architecture allows a model to understand how each word relates to other words in a passage?",
+    "options": [
+      "Diffusion",
+      "Self-attention",
+      "Clustering",
+      "Reinforcement"
+    ],
+    "answer": 1,
+    "explanation": "Self-attention lets the transformer weigh how strongly each token relates to every other token, which is how it maintains context. Diffusion is an image-generation technique, not a language-context mechanism.",
+    "topic": "Transformers"
+  },
+  {
+    "id": "fund-11",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "A company takes a general pre-trained LLM and further trains it on its own library of legal contracts so it performs better on legal tasks. This is an example of:",
+    "options": [
+      "Pre-training",
+      "Fine-tuning",
+      "Inference",
+      "Embedding"
+    ],
+    "answer": 1,
+    "explanation": "Further training a pre-trained model on a smaller, specialized dataset is fine-tuning. Pre-training is the initial broad learning phase on general data.",
+    "topic": "Fine-tuning"
+  },
+  {
+    "id": "fund-12",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "Why are embeddings important in generative AI systems?",
+    "options": [
+      "They compress files to save storage space",
+      "They represent words or data as numeric vectors that capture meaning, enabling semantic similarity",
+      "They label training data automatically",
+      "They prevent the model from ever hallucinating"
+    ],
+    "answer": 1,
+    "explanation": "Embeddings turn data into vectors of numbers that capture meaning, so items with similar meaning sit close together, enabling semantic search and recommendations. They are not a compression or anti-hallucination technique.",
+    "topic": "Embeddings"
+  },
+  {
+    "id": "fund-13",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "A user pastes a very long document into a chatbot and notices the model seems to 'forget' the beginning. Which concept explains this limit?",
+    "options": [
+      "The knowledge cutoff",
+      "The context window",
+      "The number of parameters",
+      "The learning rate"
+    ],
+    "answer": 1,
+    "explanation": "The context window is the maximum amount of text (in tokens) a model can consider at once; exceeding it causes the earliest content to fall out of scope. The knowledge cutoff instead concerns the training date.",
+    "topic": "Context window"
+  },
+  {
+    "id": "fund-14",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "An analyst asks an LLM about a major event that happened last week and gets an outdated or 'I'm not aware' response. What is the most likely cause?",
+    "options": [
+      "The model's context window is too large",
+      "The model's knowledge cutoff predates the event",
+      "The model was fine-tuned incorrectly",
+      "The embeddings were not normalized"
+    ],
+    "answer": 1,
+    "explanation": "A model only knows information present in its training data up to its knowledge cutoff, so recent events fall outside its knowledge unless it can use external tools. This is a staleness limitation, not a context-window issue.",
+    "topic": "Knowledge cutoff"
+  },
+  {
+    "id": "fund-15",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "Which of the following is the best example of a task for a multimodal model?",
+    "options": [
+      "Sorting numbers in a spreadsheet from smallest to largest",
+      "Accepting a photo plus a text question and returning a written answer about the image",
+      "Storing customer records in a relational database",
+      "Encrypting a file before sending it over the network"
+    ],
+    "answer": 1,
+    "explanation": "Multimodal models handle more than one type of data, such as combining an image and text in a single request. Sorting, storing, and encrypting are not generative multimodal tasks.",
+    "topic": "Multimodal"
+  },
+  {
+    "id": "fund-16",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "A product manager runs the exact same prompt twice and gets two different answers. Which characteristic of LLMs explains this?",
+    "options": [
+      "Hallucination",
+      "Non-determinism",
+      "Overfitting",
+      "Labeling error"
+    ],
+    "answer": 1,
+    "explanation": "Because generation involves probability, the same prompt can produce different outputs on different runs — this is non-determinism. Hallucination is about factual accuracy, not variability between runs.",
+    "topic": "Non-determinism"
+  },
+  {
+    "id": "fund-17",
+    "domain": "fundamentals",
+    "difficulty": "medium",
+    "question": "Most of the data an LLM is trained on — emails, web pages, images, documents — is best described as:",
+    "options": [
+      "Structured data",
+      "Unstructured data",
+      "Labeled data",
+      "Reinforcement data"
+    ],
+    "answer": 1,
+    "explanation": "Free-form content like text, images, and documents is unstructured data, which makes up the majority of what LLMs learn from. Structured data lives in neat rows and columns like a database.",
+    "topic": "Data types"
+  },
+  {
+    "id": "fund-18",
+    "domain": "fundamentals",
+    "difficulty": "hard",
+    "question": "A leader argues that simply feeding a model far more data will always improve its outputs, regardless of the data's origin. Which principle most directly challenges this view?",
+    "options": [
+      "The transformer's self-attention scales linearly",
+      "Garbage in, garbage out — poor-quality or biased data produces poor or biased results",
+      "Non-determinism guarantees varied output",
+      "A larger context window removes the need for fine-tuning"
+    ],
+    "answer": 1,
+    "explanation": "Data quality matters as much as quantity: noisy or biased inputs yield noisy or biased outputs, captured by 'garbage in, garbage out'. Volume alone does not guarantee better results.",
+    "topic": "Data quality"
+  },
+  {
+    "id": "fund-19",
+    "domain": "fundamentals",
+    "difficulty": "hard",
+    "question": "An engineer says an LLM 'truly understands and reasons about the world like a person does.' Why is this framing inaccurate for the exam?",
+    "options": [
+      "LLMs reason perfectly but cannot speak human languages",
+      "LLMs are statistical pattern-matchers predicting likely tokens, not systems with genuine human understanding",
+      "LLMs only work with structured numeric data",
+      "LLMs store every fact in a lookup table and never generalize"
+    ],
+    "answer": 1,
+    "explanation": "Despite fluent output, LLMs operate by statistical pattern-matching and next-token prediction, not genuine human-like reasoning, which is why they can fail simple logic while sounding confident. They do not store facts in a literal lookup table.",
+    "topic": "Lack of true reasoning"
+  },
+  {
+    "id": "fund-20",
+    "domain": "fundamentals",
+    "difficulty": "hard",
+    "question": "A company generating product photos from text descriptions asks which technique the underlying model most likely uses. What is the best answer?",
+    "options": [
+      "A diffusion model that starts from noise and progressively removes it to form an image",
+      "A supervised classifier that labels existing photos",
+      "A reinforcement agent that plays a game to earn rewards",
+      "An embedding index that retrieves stored stock photos"
+    ],
+    "answer": 0,
+    "explanation": "Diffusion models generate images by starting from random noise and gradually removing it until a coherent image matching the prompt appears. The other options describe classification, reinforcement learning, or simple retrieval, not image generation.",
+    "topic": "Diffusion models"
+  },
+  {
+    "id": "fund-21",
+    "domain": "fundamentals",
+    "difficulty": "hard",
+    "question": "A CFO is comparing two LLMs and assumes the one with far more parameters is always the right business choice. Which consideration best tempers that assumption?",
+    "options": [
+      "More parameters make a model immune to hallucination",
+      "Larger models increase compute, energy, and cost, so bigger is not automatically better for a given need",
+      "Parameters only affect the model's context window",
+      "Parameter count determines whether a model is multimodal"
+    ],
+    "answer": 1,
+    "explanation": "More parameters generally raise compute, energy, and cost, so the largest model is not always the best fit for a business requirement. Parameter count does not eliminate hallucinations or by itself set the context window or modality.",
+    "topic": "Cost and compute"
+  },
+  {
+    "id": "fund-22",
+    "domain": "fundamentals",
+    "difficulty": "hard",
+    "question": "A hiring-screening model trained on a company's historical decisions begins favoring the same demographic that was historically hired. Which limitation does this illustrate, and what is the root cause?",
+    "options": [
+      "Non-determinism caused by random sampling during generation",
+      "Bias, because the model reflects and can amplify patterns present in its training data",
+      "A knowledge cutoff, because the model lacks recent data",
+      "Hallucination, because the model fabricated the candidates"
+    ],
+    "answer": 1,
+    "explanation": "Models can reflect and amplify biases embedded in their training data, producing unfair outcomes like skewed hiring recommendations. This is a bias problem rooted in the data, not randomness, staleness, or fabrication.",
+    "topic": "Bias"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "fund-fc-01",
+    "domain": "fundamentals",
+    "front": "Large Language Model (LLM)",
+    "back": "A foundation model specialized for language, pre-trained on massive amounts of text and able to perform many language tasks like summarizing, translating, and answering questions."
+  },
+  {
+    "id": "fund-fc-02",
+    "domain": "fundamentals",
+    "front": "Foundation model",
+    "back": "A large model pre-trained on broad, general data that can be adapted (via prompting or fine-tuning) to many different downstream tasks rather than just one."
+  },
+  {
+    "id": "fund-fc-03",
+    "domain": "fundamentals",
+    "front": "Token",
+    "back": "The basic unit of text an LLM processes — a word or word-piece. In English a token is roughly three-quarters of a word."
+  },
+  {
+    "id": "fund-fc-04",
+    "domain": "fundamentals",
+    "front": "Parameter",
+    "back": "An internal weight the model learns during training. Large models have billions of parameters; more parameters mean more capacity but higher cost to run."
+  },
+  {
+    "id": "fund-fc-05",
+    "domain": "fundamentals",
+    "front": "Embedding (vector)",
+    "back": "A numeric representation of data (words, images, etc.) that captures meaning, so items with similar meaning sit close together and can be compared by semantic similarity."
+  },
+  {
+    "id": "fund-fc-06",
+    "domain": "fundamentals",
+    "front": "Transformer",
+    "back": "The neural network architecture behind modern LLMs, introduced in 2017. Its key feature is self-attention, which lets it track context across a passage."
+  },
+  {
+    "id": "fund-fc-07",
+    "domain": "fundamentals",
+    "front": "Self-attention",
+    "back": "The transformer mechanism that weighs how strongly each token relates to every other token in the input, allowing the model to keep track of context and meaning."
+  },
+  {
+    "id": "fund-fc-08",
+    "domain": "fundamentals",
+    "front": "Inference",
+    "back": "Using an already-trained model to generate an output for a new input. Every prompt-and-response interaction is an example of inference."
+  },
+  {
+    "id": "fund-fc-09",
+    "domain": "fundamentals",
+    "front": "Fine-tuning",
+    "back": "Further training a pre-trained model on a smaller, specialized dataset to adapt its behavior to a specific domain or task."
+  },
+  {
+    "id": "fund-fc-10",
+    "domain": "fundamentals",
+    "front": "Context window",
+    "back": "The maximum amount of text (in tokens) a model can consider at once, including both the prompt and the response. Content beyond it is effectively forgotten."
+  },
+  {
+    "id": "fund-fc-11",
+    "domain": "fundamentals",
+    "front": "Multimodal model",
+    "back": "A model that can accept and/or produce multiple types of data — such as text, images, audio, video, and code — often in combination."
+  },
+  {
+    "id": "fund-fc-12",
+    "domain": "fundamentals",
+    "front": "Hallucination",
+    "back": "When a model produces fluent, confident output that is factually wrong or entirely fabricated, such as inventing a citation or statistic."
+  },
+  {
+    "id": "fund-fc-13",
+    "domain": "fundamentals",
+    "front": "Supervised vs. unsupervised learning",
+    "back": "Supervised learning trains on labeled data (inputs with correct answers); unsupervised learning finds structure, like clusters, in unlabeled data on its own."
+  },
+  {
+    "id": "fund-fc-14",
+    "domain": "fundamentals",
+    "front": "Generative vs. predictive AI",
+    "back": "Generative AI creates new content (text, images, code); predictive/discriminative AI classifies or predicts based on existing data (e.g., fraud/not fraud)."
+  },
+  {
+    "id": "fund-fc-15",
+    "domain": "fundamentals",
+    "front": "Diffusion model",
+    "back": "An image-generation approach that starts from random noise and progressively removes it, step by step, until a coherent image matching the prompt emerges."
+  },
+  {
+    "id": "fund-fc-16",
+    "domain": "fundamentals",
+    "front": "Prompt",
+    "back": "The input text or instruction a user gives an LLM to guide its response. Clear, specific prompts produce more useful and relevant outputs."
+  }
+]

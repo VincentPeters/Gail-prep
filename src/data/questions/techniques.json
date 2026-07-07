@@ -1,0 +1,272 @@
+[
+  {
+    "id": "tech-01",
+    "domain": "techniques",
+    "difficulty": "easy",
+    "question": "What is prompt engineering?",
+    "options": [
+      "Retraining a model's weights on new labeled data",
+      "Crafting the input you send to a model so it produces better output",
+      "Compressing a large model into a smaller one",
+      "Storing documents as numeric vectors for search"
+    ],
+    "answer": 1,
+    "explanation": "Prompt engineering is the practice of crafting inputs (instructions, context, examples, format, constraints) to get better output. It changes what you ask, not the model itself.",
+    "topic": "Prompt engineering"
+  },
+  {
+    "id": "tech-02",
+    "domain": "techniques",
+    "difficulty": "easy",
+    "question": "You provide a model with three example input-output pairs before asking it to complete a new one. What is this called?",
+    "options": [
+      "Zero-shot prompting",
+      "One-shot prompting",
+      "Few-shot prompting",
+      "Fine-tuning"
+    ],
+    "answer": 2,
+    "explanation": "Providing several examples in the prompt is few-shot prompting. Zero-shot uses no examples and one-shot uses exactly one.",
+    "topic": "Few-shot prompting"
+  },
+  {
+    "id": "tech-03",
+    "domain": "techniques",
+    "difficulty": "easy",
+    "question": "Which technique connects a model to authoritative external sources so its answers are based on real data and hallucinations are reduced?",
+    "options": [
+      "Grounding",
+      "Raising the temperature",
+      "Distillation",
+      "Zero-shot prompting"
+    ],
+    "answer": 0,
+    "explanation": "Grounding connects the model to authoritative external facts (e.g. Google Search or Vertex AI Search) so answers are based on real data, reducing hallucinations.",
+    "topic": "Grounding"
+  },
+  {
+    "id": "tech-04",
+    "domain": "techniques",
+    "difficulty": "easy",
+    "question": "A prompt's output is coming out too random and off-topic. Which parameter should you most likely lower?",
+    "options": [
+      "Max output tokens",
+      "Temperature",
+      "Context window",
+      "Top-k floor"
+    ],
+    "answer": 1,
+    "explanation": "Higher temperature means more randomness. Lowering the temperature makes output more focused and deterministic.",
+    "topic": "Sampling parameters"
+  },
+  {
+    "id": "tech-05",
+    "domain": "techniques",
+    "difficulty": "easy",
+    "question": "What are embeddings?",
+    "options": [
+      "Rules that block harmful content",
+      "Numeric vector representations that capture the meaning of text",
+      "Examples included inside a prompt",
+      "The maximum length of a model's response"
+    ],
+    "answer": 1,
+    "explanation": "Embeddings are numeric vectors that capture meaning, enabling semantic search and similarity comparisons used by RAG.",
+    "topic": "Embeddings"
+  },
+  {
+    "id": "tech-06",
+    "domain": "techniques",
+    "difficulty": "easy",
+    "question": "Which prompting technique asks the model to reason step by step before giving its final answer?",
+    "options": [
+      "Chain-of-thought prompting",
+      "Zero-shot prompting",
+      "Nucleus sampling",
+      "Distillation"
+    ],
+    "answer": 0,
+    "explanation": "Chain-of-thought prompting asks the model to think step by step, improving performance on multi-step reasoning tasks.",
+    "topic": "Chain-of-thought"
+  },
+  {
+    "id": "tech-07",
+    "domain": "techniques",
+    "difficulty": "medium",
+    "question": "A bank wants its chatbot to answer customer questions using the bank's constantly-updated internal policy documents, always citing accurate current information. Which approach best fits?",
+    "options": [
+      "Fine-tune the base model on the policy documents",
+      "Raise the temperature so answers are more creative",
+      "Use RAG to retrieve relevant policy documents at query time and add them to the prompt",
+      "Use zero-shot prompting with no additional context"
+    ],
+    "answer": 2,
+    "explanation": "RAG retrieves relevant, current documents at query time and adds them to the prompt, keeping answers grounded and up to date without retraining. Fine-tuning does not reliably teach changing facts.",
+    "topic": "RAG"
+  },
+  {
+    "id": "tech-08",
+    "domain": "techniques",
+    "difficulty": "medium",
+    "question": "Which statement correctly distinguishes fine-tuning from RAG and prompting?",
+    "options": [
+      "Fine-tuning changes the model's weights, while RAG and prompting do not",
+      "Fine-tuning and RAG both retrain the model, but prompting does not",
+      "Prompting changes the model, while fine-tuning and RAG do not",
+      "None of these techniques change the model"
+    ],
+    "answer": 0,
+    "explanation": "Fine-tuning further-trains the base model, changing its weights. RAG and prompt engineering leave the model unchanged; they only change its inputs.",
+    "topic": "Fine-tuning"
+  },
+  {
+    "id": "tech-09",
+    "domain": "techniques",
+    "difficulty": "medium",
+    "question": "Following the recommended cost-conscious decision framework, what should you try FIRST when a model's output is not meeting your needs?",
+    "options": [
+      "Fine-tune the model on labeled data",
+      "Build a RAG pipeline with a vector database",
+      "Improve the prompt through prompt engineering",
+      "Train a distilled version of the model"
+    ],
+    "answer": 2,
+    "explanation": "Prompt engineering is the cheapest and fastest option, so it is the recommended starting point. Escalate to RAG, then fine-tuning, only if needed.",
+    "topic": "Choosing an approach"
+  },
+  {
+    "id": "tech-10",
+    "domain": "techniques",
+    "difficulty": "medium",
+    "question": "A company needs its model to consistently produce output in the brand's very specific tone and formatting style, which detailed prompts have failed to enforce. They have thousands of high-quality labeled examples. What is the best approach?",
+    "options": [
+      "Grounding with Google Search",
+      "Fine-tuning the model on the labeled examples",
+      "Lowering the max output tokens",
+      "Adding one example with one-shot prompting"
+    ],
+    "answer": 1,
+    "explanation": "When consistent style/format/domain behavior can't be achieved with prompting and quality labeled data exists, fine-tuning is the right choice because it changes the model's behavior.",
+    "topic": "Fine-tuning"
+  },
+  {
+    "id": "tech-11",
+    "domain": "techniques",
+    "difficulty": "medium",
+    "question": "Which parameter caps how long a model's response can be, useful for controlling cost and preventing runaway output?",
+    "options": [
+      "Temperature",
+      "Top-p",
+      "Safety settings",
+      "Max output tokens"
+    ],
+    "answer": 3,
+    "explanation": "Max output tokens limits the length of the generated response, which helps manage cost and avoid excessively long output.",
+    "topic": "Sampling parameters"
+  },
+  {
+    "id": "tech-12",
+    "domain": "techniques",
+    "difficulty": "medium",
+    "question": "A team needs a model to handle a very high volume of simple classification requests as cheaply and quickly as possible. Which model choice best fits?",
+    "options": [
+      "A fast, lower-cost model such as Gemini Flash",
+      "The largest, most capable model regardless of cost",
+      "A model with the smallest possible context window only",
+      "A fine-tuned image-generation model"
+    ],
+    "answer": 0,
+    "explanation": "Model selection balances quality vs. cost vs. latency. For high-volume, simple tasks, a fast/cheap model like Gemini Flash is appropriate; a powerful model like Gemini Pro would add unnecessary cost and latency.",
+    "topic": "Model selection"
+  },
+  {
+    "id": "tech-13",
+    "domain": "techniques",
+    "difficulty": "medium",
+    "question": "In a RAG system, how is the most relevant document typically found for a user's question?",
+    "options": [
+      "By raising the temperature until an answer appears",
+      "By fine-tuning the model on the query",
+      "By counting exact keyword matches only",
+      "By embedding the query and using vector search to find semantically similar stored documents"
+    ],
+    "answer": 3,
+    "explanation": "RAG embeds the query and uses vector search to find the most semantically similar document chunks in a vector database, matching by meaning rather than exact keywords.",
+    "topic": "RAG"
+  },
+  {
+    "id": "tech-14",
+    "domain": "techniques",
+    "difficulty": "medium",
+    "question": "You want a customer-service model to always maintain a friendly professional tone and never give legal advice across an entire conversation. What is the best place to set this?",
+    "options": [
+      "In a single few-shot example",
+      "In the system instruction",
+      "By lowering top-k to 1",
+      "By increasing max output tokens"
+    ],
+    "answer": 1,
+    "explanation": "System instructions set the model's overall, persistent behavior and persona for the whole conversation, making them ideal for tone and hard rules.",
+    "topic": "System instructions"
+  },
+  {
+    "id": "tech-15",
+    "domain": "techniques",
+    "difficulty": "hard",
+    "question": "A model needs to answer questions about breaking news from the last 24 hours that is far beyond its training cutoff. Which technique is the best fit?",
+    "options": [
+      "Fine-tuning the model overnight on news articles",
+      "Grounding with Google Search to pull fresh web facts",
+      "Increasing the temperature for more creative answers",
+      "Using more few-shot examples in the prompt"
+    ],
+    "answer": 1,
+    "explanation": "Grounding with Google Search connects the model to fresh public web facts, ideal for current events beyond the training cutoff. Fine-tuning is slow and does not reliably capture rapidly-changing facts.",
+    "topic": "Grounding"
+  },
+  {
+    "id": "tech-16",
+    "domain": "techniques",
+    "difficulty": "hard",
+    "question": "An organization wants to reduce inference cost and latency by creating a smaller model that mimics the behavior of a larger, more expensive one. Which technique describes this?",
+    "options": [
+      "Distillation",
+      "Retrieval-augmented generation",
+      "Chain-of-thought prompting",
+      "Nucleus sampling"
+    ],
+    "answer": 0,
+    "explanation": "Distillation trains a smaller 'student' model to imitate a larger model, reducing cost and latency while retaining much of the capability.",
+    "topic": "Distillation"
+  },
+  {
+    "id": "tech-17",
+    "domain": "techniques",
+    "difficulty": "hard",
+    "question": "A team must fine-tune a model but wants to minimize compute cost by updating only a small portion of the model rather than all of its parameters. Which approach fits?",
+    "options": [
+      "Full fine-tuning of every parameter",
+      "Parameter-efficient tuning such as LoRA / adapters",
+      "Building a vector database",
+      "Raising top-p to 1.0"
+    ],
+    "answer": 1,
+    "explanation": "Parameter-efficient tuning (e.g. adapters or LoRA) tunes only a small part of the model, making tuning far cheaper and faster than full fine-tuning.",
+    "topic": "Parameter-efficient tuning"
+  },
+  {
+    "id": "tech-18",
+    "domain": "techniques",
+    "difficulty": "hard",
+    "question": "After deploying a RAG-based assistant, a leader wants to confirm that its answers are actually supported by the retrieved source documents and not fabricated. Which evaluation focus is most relevant?",
+    "options": [
+      "Measuring only the average response length",
+      "Checking groundedness — whether answers are supported by the provided sources",
+      "Maximizing temperature for variety",
+      "Counting how many few-shot examples were used"
+    ],
+    "answer": 1,
+    "explanation": "Groundedness checks verify that answers are actually supported by the provided source documents, which is essential for evaluating RAG systems and catching hallucinations.",
+    "topic": "Evaluation"
+  }
+]

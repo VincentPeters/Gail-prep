@@ -1,0 +1,209 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { DOMAIN_BY_ID } from "../../data/domains";
+import { questionsByDomain } from "../../data";
+
+export async function getStaticPaths() {
+  const notes = await getCollection("study");
+  const sorted = notes.sort((a, b) => a.data.order - b.data.order);
+  return sorted.map((note, i) => ({
+    params: { slug: note.slug },
+    props: {
+      note,
+      prev: sorted[i - 1] ?? null,
+      next: sorted[i + 1] ?? null,
+    },
+  }));
+}
+
+const { note, prev, next } = Astro.props;
+const { Content, headings } = await note.render();
+const domain = DOMAIN_BY_ID[note.data.domain];
+const qCount = questionsByDomain(note.data.domain).length;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${base}${p}`;
+
+const toc = headings.filter((h) => h.depth === 2);
+---
+
+<BaseLayout title={`${note.data.title} — GAIL Prep`} description={note.data.summary} active="study">
+  <section class="wrap study-page">
+    <article>
+      <a class="back-link" href={link("/study")}>← All study notes</a>
+      <div class="study-head" style={`--accent-domain:${domain?.hex ?? "var(--accent)"}`}>
+        {domain && <span class="pill dot" style={`--dot:${domain.hex}`}>Domain · {domain.weight}% of exam</span>}
+        <h1>{note.data.title}</h1>
+        <p class="study-summary">{note.data.summary}</p>
+        <span class="study-reading">📖 {note.data.readingMinutes} min read</span>
+      </div>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      <div class="card card-pad study-quiz-cta" style={`--accent-domain:${domain?.hex ?? "var(--accent)"}`}>
+        <div>
+          <h3>Ready to test yourself?</h3>
+          <p>Drill this domain with {qCount} practice question{qCount === 1 ? "" : "s"} — instant feedback and explanations.</p>
+        </div>
+        <a class="btn btn-primary" href={link(`/quizzes/${note.data.domain}`)}>Take the {domain?.short ?? ""} quiz →</a>
+      </div>
+
+      <nav class="study-nav">
+        {prev ? (
+          <a class="study-nav-link prev" href={link(`/study/${prev.slug}`)}>
+            <span>← Previous</span>
+            <strong>{prev.data.title}</strong>
+          </a>
+        ) : <span />}
+        {next ? (
+          <a class="study-nav-link next" href={link(`/study/${next.slug}`)}>
+            <span>Next →</span>
+            <strong>{next.data.title}</strong>
+          </a>
+        ) : <span />}
+      </nav>
+    </article>
+
+    {
+      toc.length > 0 && (
+        <aside class="toc">
+          <div class="toc-inner">
+            <strong>On this page</strong>
+            <ul>
+              {toc.map((h) => (
+                <li><a href={`#${h.slug}`}>{h.text}</a></li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .study-page {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 2.5rem;
+    padding: 1.5rem 1.25rem 2rem;
+    align-items: start;
+  }
+  @media (max-width: 940px) {
+    .study-page {
+      grid-template-columns: 1fr;
+    }
+    .toc {
+      display: none;
+    }
+  }
+  article {
+    min-width: 0;
+    max-width: 760px;
+  }
+  .back-link {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .study-head {
+    padding: 1rem 0 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--surface-border);
+  }
+  .study-head h1 {
+    margin: 0.8rem 0 0.5rem;
+  }
+  .study-summary {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 60ch;
+  }
+  .study-reading {
+    color: var(--text-faint);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .study-quiz-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin: 2.5rem 0 1rem;
+    border-left: 4px solid var(--accent-domain);
+    flex-wrap: wrap;
+  }
+  .study-quiz-cta h3 {
+    margin: 0 0 0.3rem;
+  }
+  .study-quiz-cta p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+  .study-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .study-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    background: var(--bg-elevated);
+    max-width: 48%;
+  }
+  .study-nav-link:hover {
+    text-decoration: none;
+    border-color: var(--accent);
+  }
+  .study-nav-link span {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+  }
+  .study-nav-link.next {
+    text-align: right;
+    margin-left: auto;
+  }
+  .toc {
+    position: sticky;
+    top: 80px;
+  }
+  .toc-inner {
+    font-size: 0.9rem;
+  }
+  .toc-inner strong {
+    display: block;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.72rem;
+    color: var(--text-faint);
+  }
+  .toc-inner ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    border-left: 2px solid var(--surface-border);
+  }
+  .toc-inner li a {
+    color: var(--text-muted);
+    padding-left: 0.8rem;
+    display: block;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+  }
+  .toc-inner li a:hover {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    text-decoration: none;
+  }
+</style>
