@@ -1,0 +1,362 @@
+[
+  {
+    "id": "offr-01",
+    "domain": "offerings",
+    "difficulty": "easy",
+    "question": "What is Gemini?",
+    "options": [
+      "A relational database service on Google Cloud",
+      "Google's family of natively multimodal foundation models",
+      "A tool for provisioning virtual machines",
+      "Google's framework for securing AI systems"
+    ],
+    "answer": 1,
+    "explanation": "Gemini is Google's family of natively multimodal foundation models, able to work across text, images, audio, video, and code. It powers the Gemini app and is available via API.",
+    "topic": "Gemini"
+  },
+  {
+    "id": "offr-02",
+    "domain": "offerings",
+    "difficulty": "easy",
+    "question": "A developer wants the fastest, lowest-cost Gemini variant for a high-volume chat feature. Which should they choose?",
+    "options": [
+      "Gemini Pro",
+      "Gemini Flash",
+      "Gemini Ultra Storage",
+      "Gemini Batch"
+    ],
+    "answer": 1,
+    "explanation": "Gemini Flash is optimized for speed and low cost, making it ideal for high-volume, latency-sensitive tasks. Gemini Pro is the most capable but slower and more expensive.",
+    "topic": "Gemini Pro vs Flash"
+  },
+  {
+    "id": "offr-03",
+    "domain": "offerings",
+    "difficulty": "easy",
+    "question": "An individual developer wants to quickly prototype an app using Gemini with just an API key, without setting up enterprise controls. Which product fits best?",
+    "options": [
+      "Vertex AI",
+      "Google Agentspace",
+      "Google AI Studio",
+      "AI Hypercomputer"
+    ],
+    "answer": 2,
+    "explanation": "Google AI Studio provides fast, developer-friendly access to Gemini via an API key, ideal for prototyping. Vertex AI is the enterprise platform with fuller controls.",
+    "topic": "Google AI Studio vs Vertex AI"
+  },
+  {
+    "id": "offr-04",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "A large bank needs to run Gemini in production with strict security, governance, data residency, and MLOps. Which Google Cloud offering is designed for this?",
+    "options": [
+      "Google AI Studio",
+      "Vertex AI",
+      "NotebookLM",
+      "Gemini for Workspace"
+    ],
+    "answer": 1,
+    "explanation": "Vertex AI is Google Cloud's enterprise, fully-managed AI/ML platform, providing security, governance, data residency, and MLOps for production workloads. Google AI Studio targets quick prototyping.",
+    "topic": "Google AI Studio vs Vertex AI"
+  },
+  {
+    "id": "offr-05",
+    "domain": "offerings",
+    "difficulty": "easy",
+    "question": "Which Vertex AI feature is a catalog where you can discover, test, and deploy 100+ models, including Gemini, Gemma, and partner models like Claude and Llama?",
+    "options": [
+      "Model Garden",
+      "Vertex AI Search",
+      "Cloud Assist",
+      "Audio Overviews"
+    ],
+    "answer": 0,
+    "explanation": "Model Garden is Vertex AI's catalog of 100+ first-party (Gemini, Imagen), open (Gemma), and third-party/partner (Claude, Llama) models to discover, test, and deploy.",
+    "topic": "Model Garden"
+  },
+  {
+    "id": "offr-06",
+    "domain": "offerings",
+    "difficulty": "easy",
+    "question": "A marketing team wants to generate original images from text descriptions. Which Google first-party model should they use?",
+    "options": [
+      "Chirp",
+      "Veo",
+      "Imagen",
+      "Lyria"
+    ],
+    "answer": 2,
+    "explanation": "Imagen is Google's image generation model. Veo generates video, Chirp handles speech/audio, and Lyria generates music.",
+    "topic": "Imagen"
+  },
+  {
+    "id": "offr-07",
+    "domain": "offerings",
+    "difficulty": "easy",
+    "question": "Which Google model is used to generate video content?",
+    "options": [
+      "Lyria",
+      "Gemma",
+      "Imagen",
+      "Veo"
+    ],
+    "answer": 3,
+    "explanation": "Veo is Google's video generation model. Imagen creates images, Chirp handles speech, and Lyria generates music.",
+    "topic": "Veo"
+  },
+  {
+    "id": "offr-08",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "A company wants to run an open, lightweight model on its own infrastructure rather than calling a hosted API. Which Google model family fits?",
+    "options": [
+      "Gemini Pro",
+      "Gemma",
+      "Imagen",
+      "Veo"
+    ],
+    "answer": 1,
+    "explanation": "Gemma is Google's family of open, lightweight models that organizations can download and run themselves. Gemini is offered as a hosted/managed model.",
+    "topic": "Gemma"
+  },
+  {
+    "id": "offr-09",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "An enterprise wants employees to search across internal documents using natural language, with answers grounded in that private content (RAG). Which product is the best fit?",
+    "options": [
+      "Vertex AI Search",
+      "Imagen",
+      "Google AI Studio",
+      "Gemini Flash"
+    ],
+    "answer": 0,
+    "explanation": "Vertex AI Search provides enterprise search and grounding/retrieval over your own data, delivering retrieval-augmented generation (RAG) so answers are based on your content.",
+    "topic": "Vertex AI Search"
+  },
+  {
+    "id": "offr-10",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "A business wants to build a custom AI agent that can reason about a goal, use tools and company data, and take actions, with little custom code. Which product should they use?",
+    "options": [
+      "NotebookLM",
+      "Chirp",
+      "Cloud TPUs",
+      "Vertex AI Agent Builder"
+    ],
+    "answer": 3,
+    "explanation": "Vertex AI Agent Builder is the toolkit for building AI agents and search/conversational apps grounded in your own data, often with minimal custom code.",
+    "topic": "Agent Builder"
+  },
+  {
+    "id": "offr-11",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "A research analyst uploads a set of PDFs and wants an assistant that answers ONLY from those uploaded sources and cites them. Which product is designed for this?",
+    "options": [
+      "Gemini for Workspace",
+      "Model Garden",
+      "NotebookLM",
+      "Vertex AI Studio"
+    ],
+    "answer": 2,
+    "explanation": "NotebookLM is a grounded research assistant that answers only from the sources you upload, with citations and features like Audio Overviews. It does not pull from the open web.",
+    "topic": "NotebookLM"
+  },
+  {
+    "id": "offr-12",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "To reduce hallucinations and give Gemini access to fresh, current information from the public web, which capability would you enable?",
+    "options": [
+      "Grounding with Google Search",
+      "AI Hypercomputer",
+      "SAIF",
+      "Gemini Code Assist"
+    ],
+    "answer": 0,
+    "explanation": "Grounding with Google Search connects Gemini to fresh, real-world web results, reducing hallucination by anchoring answers to current, verifiable information.",
+    "topic": "Grounding with Google Search"
+  },
+  {
+    "id": "offr-13",
+    "domain": "offerings",
+    "difficulty": "easy",
+    "question": "Which offering brings AI directly into Docs, Gmail, Sheets, Slides, and Meet for drafting and summarizing?",
+    "options": [
+      "Gemini for Google Workspace",
+      "Vertex AI Search",
+      "Model Garden",
+      "Cloud TPUs"
+    ],
+    "answer": 0,
+    "explanation": "Gemini for Google Workspace embeds AI into Docs, Gmail, Sheets, Slides, and Meet to help draft, summarize, and generate content for everyday knowledge workers.",
+    "topic": "Gemini for Workspace"
+  },
+  {
+    "id": "offr-14",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "A software team wants AI help writing, explaining, and reviewing code inside their IDE. Which offering targets this?",
+    "options": [
+      "Gemini for Workspace",
+      "NotebookLM Enterprise",
+      "Lyria",
+      "Gemini Code Assist"
+    ],
+    "answer": 3,
+    "explanation": "Gemini Code Assist (part of Gemini for Google Cloud) provides AI help for developers writing, explaining, and reviewing code. Gemini for Workspace targets office productivity.",
+    "topic": "Gemini Code Assist"
+  },
+  {
+    "id": "offr-15",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "What are TPUs?",
+    "options": [
+      "Third-party partner models available in Model Garden",
+      "Google's custom-designed AI accelerator chips (ASICs) built for machine learning",
+      "A prompt-tuning technique in Vertex AI Studio",
+      "Google's enterprise search product"
+    ],
+    "answer": 1,
+    "explanation": "Tensor Processing Units (TPUs) are Google's custom-designed AI accelerator chips (ASICs), such as the Trillium generation, built specifically for training and running ML models at scale.",
+    "topic": "TPUs"
+  },
+  {
+    "id": "offr-16",
+    "domain": "offerings",
+    "difficulty": "hard",
+    "question": "Which term describes Google's integrated supercomputing architecture that combines optimized hardware (TPUs/GPUs), software, and networking for large-scale AI?",
+    "options": [
+      "AI Hypercomputer",
+      "Model Garden",
+      "Agentspace",
+      "Vertex AI Pipelines"
+    ],
+    "answer": 0,
+    "explanation": "AI Hypercomputer is Google's integrated supercomputing architecture that unifies optimized hardware, software, and networking to train and serve large models at scale. TPUs and GPUs are the chips within it.",
+    "topic": "AI Hypercomputer"
+  },
+  {
+    "id": "offr-17",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "A company wants to give all employees a single place to search enterprise data and use AI agents across company systems. Which product is designed for this?",
+    "options": [
+      "Google AI Studio",
+      "Google Agentspace",
+      "Imagen",
+      "Chirp"
+    ],
+    "answer": 1,
+    "explanation": "Google Agentspace brings enterprise search plus AI agents to employees, letting staff find information and get work done across company systems from one place.",
+    "topic": "Agentspace"
+  },
+  {
+    "id": "offr-18",
+    "domain": "offerings",
+    "difficulty": "easy",
+    "question": "Which Google model handles speech-to-text and text-to-speech (voice/audio)?",
+    "options": [
+      "Imagen",
+      "Lyria",
+      "Chirp",
+      "Veo"
+    ],
+    "answer": 2,
+    "explanation": "Chirp is Google's speech/audio model for capabilities like speech-to-text and text-to-speech. Imagen is images, Veo is video, Lyria is music.",
+    "topic": "Chirp"
+  },
+  {
+    "id": "offr-19",
+    "domain": "offerings",
+    "difficulty": "hard",
+    "question": "A team using Vertex AI wants a single workspace to prompt, tune, test, and evaluate models before deploying them. Which component is that?",
+    "options": [
+      "Vertex AI Studio",
+      "Model Garden",
+      "Google AI Studio",
+      "NotebookLM"
+    ],
+    "answer": 0,
+    "explanation": "Vertex AI Studio is the workspace within Vertex AI to prompt, tune, test, and evaluate models. Model Garden is the catalog for discovering models; Google AI Studio is the separate consumer/prototyping tool.",
+    "topic": "Vertex AI Studio"
+  },
+  {
+    "id": "offr-20",
+    "domain": "offerings",
+    "difficulty": "hard",
+    "question": "A startup prototypes an app in Google AI Studio, then needs to move to production with IAM access controls, data residency, and monitoring. What is the most appropriate next step?",
+    "options": [
+      "Rebuild the app on a different foundation model outside Google",
+      "Move the workload to Vertex AI, which serves the same models with enterprise controls",
+      "Keep using Google AI Studio and add a firewall",
+      "Switch entirely to NotebookLM"
+    ],
+    "answer": 1,
+    "explanation": "Vertex AI serves the same Gemini models as Google AI Studio but adds enterprise security, governance, data residency, and MLOps, so it is the natural production destination without changing model family.",
+    "topic": "Google AI Studio vs Vertex AI"
+  },
+  {
+    "id": "offr-21",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "Model Garden includes third-party models. Which of the following is an example of a partner model available there?",
+    "options": [
+      "Anthropic's Claude",
+      "Imagen",
+      "Chirp",
+      "Gemini Flash"
+    ],
+    "answer": 0,
+    "explanation": "Model Garden includes third-party/partner models such as Anthropic's Claude and Meta's Llama, alongside Google first-party models and open models like Gemma.",
+    "topic": "Model Garden"
+  },
+  {
+    "id": "offr-22",
+    "domain": "offerings",
+    "difficulty": "medium",
+    "question": "An organization loves NotebookLM but needs enterprise-grade security, privacy, and compliance controls for company-wide use. What should they adopt?",
+    "options": [
+      "Gemini for Workspace",
+      "NotebookLM Enterprise",
+      "Google AI Studio",
+      "Cloud GPUs"
+    ],
+    "answer": 1,
+    "explanation": "NotebookLM Enterprise is the version of NotebookLM with Google Cloud's enterprise security, privacy, and compliance controls for organizational use.",
+    "topic": "NotebookLM Enterprise"
+  },
+  {
+    "id": "offr-23",
+    "domain": "offerings",
+    "difficulty": "hard",
+    "question": "Which statement best distinguishes Grounding with Google Search from Vertex AI Search?",
+    "options": [
+      "Both only work with uploaded PDF files",
+      "Grounding with Google Search anchors answers to fresh public web results; Vertex AI Search grounds answers in your own private enterprise data",
+      "Grounding with Google Search is a chip; Vertex AI Search is a model",
+      "They are two names for the same product"
+    ],
+    "answer": 1,
+    "explanation": "Grounding with Google Search connects the model to fresh public web results, while Vertex AI Search retrieves and grounds answers in your organization's own private data (RAG). Both reduce hallucination but over different sources.",
+    "topic": "Grounding"
+  },
+  {
+    "id": "offr-24",
+    "domain": "offerings",
+    "difficulty": "hard",
+    "question": "A workload needs a general-purpose accelerator option (rather than Google's custom ASICs) for AI training and inference on Google Cloud. Which is being described?",
+    "options": [
+      "GPUs (e.g. NVIDIA)",
+      "TPUs",
+      "SAIF",
+      "Lyria"
+    ],
+    "answer": 0,
+    "explanation": "GPUs, such as NVIDIA's, are the general-purpose accelerator option on Google Cloud, alongside Google's custom TPUs (ASICs). Both can power AI training and inference within AI Hypercomputer.",
+    "topic": "GPUs"
+  }
+]

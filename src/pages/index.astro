@@ -1,0 +1,314 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { DOMAINS, EXAM_FACTS } from "../data/domains";
+import { questionCounts, FLASHCARDS, QUESTIONS } from "../data";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${base}${p}`;
+const counts = questionCounts();
+const totalQ = QUESTIONS.length;
+const totalCards = FLASHCARDS.length;
+
+const facts = [
+  { label: "Questions", value: EXAM_FACTS.questions },
+  { label: "Duration", value: EXAM_FACTS.duration },
+  { label: "Cost", value: EXAM_FACTS.cost },
+  { label: "Validity", value: EXAM_FACTS.validity },
+  { label: "Prerequisites", value: EXAM_FACTS.prerequisites },
+  { label: "Delivery", value: EXAM_FACTS.delivery },
+];
+
+const features = [
+  {
+    icon: "📚",
+    title: "Study notes",
+    body: "Plain-language notes for all four exam domains, written for business leaders — no ML background needed.",
+    href: "/study",
+    cta: "Read the notes",
+  },
+  {
+    icon: "✅",
+    title: "Domain quizzes",
+    body: `${totalQ} questions with instant feedback and an explanation for every answer, so you learn as you go.`,
+    href: "/quizzes",
+    cta: "Practice by domain",
+  },
+  {
+    icon: "⏱️",
+    title: "Timed mock exam",
+    body: `A full ${EXAM_FACTS.mockExamQuestions}-question, ${EXAM_FACTS.mockExamMinutes}-minute exam weighted like the real blueprint, with a scored review.`,
+    href: "/exam",
+    cta: "Take the mock exam",
+  },
+  {
+    icon: "🃏",
+    title: "Flashcards",
+    body: `${totalCards} flashcards to lock in the terminology and Google Cloud product names you'll be tested on.`,
+    href: "/flashcards",
+    cta: "Flip some cards",
+  },
+];
+---
+
+<BaseLayout title="GAIL Prep — Google Generative AI Leader certification" active="home">
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill hero-pill">Google Cloud · Generative AI Leader</span>
+      <h1>Pass the Generative&nbsp;AI Leader exam with confidence.</h1>
+      <p class="hero-sub">
+        A free, focused companion for the Google&nbsp;Cloud <strong>Generative&nbsp;AI Leader (GAIL)</strong>
+        certification — study notes, {totalQ}+ practice questions, timed mock exams, and
+        flashcards, all mapped to the official exam domains.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href={link("/study")}>Start studying</a>
+        <a class="btn btn-ghost" href={link("/exam")}>Take a mock exam →</a>
+      </div>
+
+      <div class="facts-grid">
+        {
+          facts.map((f) => (
+            <div class="fact">
+              <span class="fact-value">{f.value}</span>
+              <span class="fact-label">{f.label}</span>
+            </div>
+          ))
+        }
+      </div>
+      <p class="hero-note">
+        Foundational, non-technical certification for {EXAM_FACTS.audience.toLowerCase()} · launched {EXAM_FACTS.launched}.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="section-head">
+      <span class="eyebrow">Everything you need</span>
+      <h2>Four ways to prepare</h2>
+    </div>
+    <div class="grid cols-2">
+      {
+        features.map((f) => (
+          <a class="card card-pad feature" href={link(f.href)}>
+            <span class="feature-icon">{f.icon}</span>
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+            <span class="feature-cta">{f.cta} →</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="section-head">
+      <span class="eyebrow">The blueprint</span>
+      <h2>The four exam domains</h2>
+      <p class="section-lead">
+        The exam is weighted across four domains. Study each one, then drill it with a
+        targeted quiz. Percentages are the official exam weightings.
+      </p>
+    </div>
+    <div class="grid cols-2">
+      {
+        DOMAINS.map((d) => (
+          <div class="card card-pad domain-card" style={`--accent-domain:${d.hex}`}>
+            <div class="domain-card-head">
+              <span class="pill dot" style={`--dot:${d.hex}`}>{d.short}</span>
+              <span class="domain-weight">{d.weight}%</span>
+            </div>
+            <h3>{d.title}</h3>
+            <p>{d.blurb}</p>
+            <div class="domain-meter">
+              <div class="bar"><span style={`width:${d.weight * 2}%;background:${d.hex}`} /></div>
+            </div>
+            <div class="domain-card-links">
+              <a href={link(`/study/${d.slug}`)}>Study →</a>
+              <a href={link(`/quizzes/${d.id}`)}>Quiz ({counts[d.id] || 0}) →</a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="card card-pad cta-band">
+      <div>
+        <h2>Track your progress as you go</h2>
+        <p>
+          Every quiz answer and mock-exam result is saved privately in your browser.
+          See your accuracy by domain and know exactly what to review before test day.
+        </p>
+      </div>
+      <a class="btn btn-primary" href={link("/progress")}>View your progress</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 3.5rem 0 2.5rem;
+    background:
+      radial-gradient(60% 60% at 15% 0%, color-mix(in srgb, var(--g-blue) 14%, transparent), transparent),
+      radial-gradient(50% 50% at 100% 10%, color-mix(in srgb, var(--g-green) 12%, transparent), transparent);
+  }
+  .hero-pill {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    max-width: 16ch;
+    margin: 0.3rem 0 1rem;
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    max-width: 60ch;
+    color: var(--text-muted);
+  }
+  .hero-cta {
+    display: flex;
+    gap: 0.7rem;
+    margin: 1.6rem 0 2rem;
+    flex-wrap: wrap;
+  }
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  @media (max-width: 860px) {
+    .facts-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 480px) {
+    .facts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .fact {
+    background: var(--bg-elevated);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    padding: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    box-shadow: var(--shadow);
+  }
+  .fact-value {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  .fact-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-faint);
+    font-weight: 600;
+  }
+  .hero-note {
+    margin-top: 1.2rem;
+    color: var(--text-faint);
+    font-size: 0.9rem;
+  }
+  .section {
+    padding: 2.5rem 0 0.5rem;
+  }
+  .section-head {
+    margin-bottom: 1.4rem;
+  }
+  .section-head h2 {
+    font-size: 1.7rem;
+    margin: 0.3rem 0 0.4rem;
+  }
+  .section-lead {
+    color: var(--text-muted);
+    max-width: 62ch;
+  }
+  .feature {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: transform 0.1s, box-shadow 0.15s;
+  }
+  .feature:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .feature-icon {
+    font-size: 1.8rem;
+  }
+  .feature h3 {
+    margin: 0.2rem 0;
+  }
+  .feature p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .feature-cta {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .domain-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 3px solid var(--accent-domain);
+  }
+  .domain-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .domain-weight {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--accent-domain);
+  }
+  .domain-card h3 {
+    margin: 0.2rem 0;
+    font-size: 1.15rem;
+  }
+  .domain-card p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .domain-meter {
+    margin: 0.4rem 0;
+  }
+  .domain-card-links {
+    display: flex;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .cta-band {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    background:
+      linear-gradient(120deg, color-mix(in srgb, var(--g-blue) 10%, var(--bg-elevated)), var(--bg-elevated));
+    flex-wrap: wrap;
+  }
+  .cta-band h2 {
+    font-size: 1.4rem;
+    margin: 0 0 0.4rem;
+  }
+  .cta-band p {
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 60ch;
+  }
+</style>

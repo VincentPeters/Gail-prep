@@ -1,0 +1,18 @@
+---
+import type { Question } from "../data/types";
+export interface Props {
+  pool: Question[];
+  count?: number;
+}
+const { pool, count } = Astro.props;
+---
+
+<div class="exam" data-exam data-count={count ? String(count) : undefined}>
+  <script type="application/json" is:inline set:html={JSON.stringify(pool)} />
+  <div class="exam-mount"></div>
+</div>
+
+<script>
+  import { initExam } from "../scripts/exam";
+  initExam();
+</script>

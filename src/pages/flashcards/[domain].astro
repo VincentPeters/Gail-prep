@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FlashcardDeck from "../../components/FlashcardDeck.astro";
+import { DOMAINS } from "../../data/domains";
+import { FLASHCARDS, flashcardsByDomain } from "../../data";
+
+export async function getStaticPaths() {
+  const domainPaths = DOMAINS.map((d) => ({
+    params: { domain: d.id },
+    props: { title: d.title, short: d.short, hex: d.hex, cards: flashcardsByDomain(d.id) },
+  }));
+  const all = {
+    params: { domain: "all" },
+    props: { title: "All Domains", short: "All", hex: "#12b5cb", cards: FLASHCARDS },
+  };
+  return [...domainPaths, all];
+}
+
+const { title, short, hex, cards } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${base}${p}`;
+---
+
+<BaseLayout title={`${title} Flashcards — GAIL Prep`} active="flashcards">
+  <section class="wrap section narrow">
+    <a class="back-link" href={link("/flashcards")}>← All flashcards</a>
+    <div class="deck-head" style={`--accent-domain:${hex}`}>
+      <span class="pill dot" style={`--dot:${hex}`}>{short}</span>
+      <h1>{title}</h1>
+      <p>{cards.length} cards. Click a card to flip it.</p>
+    </div>
+
+    {
+      cards.length > 0 ? (
+        <FlashcardDeck cards={cards} />
+      ) : (
+        <div class="card card-pad">
+          <p>Flashcards for this deck are being generated. Check back shortly.</p>
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 1.5rem 0 2rem;
+  }
+  .narrow {
+    max-width: 680px;
+  }
+  .back-link {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .deck-head {
+    padding: 0.8rem 0 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .deck-head h1 {
+    margin: 0.7rem 0 0.3rem;
+  }
+  .deck-head p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { DOMAINS } from "../../data/domains";
+import { questionCounts, QUESTIONS } from "../../data";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${base}${p}`;
+const counts = questionCounts();
+---
+
+<BaseLayout title="Quizzes — GAIL Prep" active="quizzes">
+  <section class="wrap section">
+    <span class="eyebrow">Practice</span>
+    <h1>Domain quizzes</h1>
+    <p class="lead">
+      Practice one domain at a time. Every question gives instant feedback and an
+      explanation, and your accuracy is tracked on your
+      <a href={link("/progress")}>progress page</a>. Answers and option order are shuffled each time.
+    </p>
+
+    <a class="card card-pad mixed-quiz" href={link("/quizzes/all")}>
+      <div>
+        <span class="pill">Mixed</span>
+        <h3>Mixed quick quiz</h3>
+        <p>20 random questions drawn from all four domains — a fast warm-up across the whole blueprint.</p>
+      </div>
+      <span class="btn btn-primary">Start mixed quiz →</span>
+    </a>
+
+    <div class="grid cols-2 quiz-grid">
+      {
+        DOMAINS.map((d) => (
+          <a class="card card-pad quiz-card" href={link(`/quizzes/${d.id}`)} style={`--accent-domain:${d.hex}`}>
+            <div class="quiz-card-head">
+              <span class="pill dot" style={`--dot:${d.hex}`}>{d.short}</span>
+              <span class="quiz-count">{counts[d.id] || 0} Q</span>
+            </div>
+            <h3>{d.title}</h3>
+            <p>{d.blurb}</p>
+            <span class="quiz-card-cta">Start quiz →</span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="total-note">{QUESTIONS.length} practice questions in total.</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    color: var(--text-muted);
+    max-width: 65ch;
+    font-size: 1.05rem;
+  }
+  .section {
+    padding: 2rem 0;
+  }
+  .mixed-quiz {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    background: linear-gradient(120deg, color-mix(in srgb, var(--g-purple) 10%, var(--bg-elevated)), var(--bg-elevated));
+    flex-wrap: wrap;
+  }
+  .mixed-quiz:hover {
+    text-decoration: none;
+    box-shadow: var(--shadow-lg);
+  }
+  .mixed-quiz h3 {
+    margin: 0.4rem 0 0.3rem;
+  }
+  .mixed-quiz p {
+    margin: 0;
+    color: var(--text-muted);
+    max-width: 55ch;
+  }
+  .quiz-grid {
+    margin-top: 0.5rem;
+  }
+  .quiz-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    border-top: 3px solid var(--accent-domain);
+    transition: transform 0.1s, box-shadow 0.15s;
+  }
+  .quiz-card:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .quiz-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .quiz-count {
+    font-weight: 700;
+    color: var(--accent-domain);
+  }
+  .quiz-card h3 {
+    margin: 0.2rem 0;
+    font-size: 1.1rem;
+  }
+  .quiz-card p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .quiz-card-cta {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .total-note {
+    color: var(--text-faint);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+</style>

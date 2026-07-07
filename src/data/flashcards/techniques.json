@@ -1,0 +1,92 @@
+[
+  {
+    "id": "tech-fc-01",
+    "domain": "techniques",
+    "front": "What is prompt engineering, and why start with it?",
+    "back": "Crafting the input (instruction, context, examples, persona, output format, constraints) to get better output. It's the cheapest and fastest technique and does not change the model, so it's the recommended first step."
+  },
+  {
+    "id": "tech-fc-02",
+    "domain": "techniques",
+    "front": "Zero-shot vs. one-shot vs. few-shot prompting",
+    "back": "Zero-shot = no examples in the prompt. One-shot = one example. Few-shot = several examples. Few-shot is the go-to for teaching a consistent pattern or format without training."
+  },
+  {
+    "id": "tech-fc-03",
+    "domain": "techniques",
+    "front": "What is chain-of-thought prompting?",
+    "back": "Asking the model to reason step by step before giving a final answer. Improves accuracy on math, logic, and multi-step problems."
+  },
+  {
+    "id": "tech-fc-04",
+    "domain": "techniques",
+    "front": "What is a system instruction?",
+    "back": "A persistent directive that sets the model's overall behavior and persona for an entire conversation (e.g. tone and hard rules), separate from the individual user prompt."
+  },
+  {
+    "id": "tech-fc-05",
+    "domain": "techniques",
+    "front": "What does the temperature parameter control?",
+    "back": "Randomness. Higher temperature = more random, creative, varied output. Lower temperature = more focused, deterministic, repeatable output. Use low for factual tasks, high for brainstorming."
+  },
+  {
+    "id": "tech-fc-06",
+    "domain": "techniques",
+    "front": "What do top-k and top-p (nucleus) sampling do?",
+    "back": "Both narrow the pool of candidate next-words. Top-k limits choices to the k most likely words. Top-p limits to the smallest set of words whose combined probability reaches p."
+  },
+  {
+    "id": "tech-fc-07",
+    "domain": "techniques",
+    "front": "What is the max output tokens parameter for?",
+    "back": "It caps how long the model's response can be, helping control cost and prevent runaway output."
+  },
+  {
+    "id": "tech-fc-08",
+    "domain": "techniques",
+    "front": "What is grounding, and what problem does it solve?",
+    "back": "Connecting a model to authoritative external facts so answers are based on real data. It reduces hallucinations. Examples: Grounding with Google Search (fresh web) and Vertex AI Search (enterprise data)."
+  },
+  {
+    "id": "tech-fc-09",
+    "domain": "techniques",
+    "front": "What is RAG (Retrieval-Augmented Generation)?",
+    "back": "At query time, retrieve relevant documents (often via embeddings + vector search) and add them to the prompt so the model answers from that context. Keeps answers current and grounded without retraining."
+  },
+  {
+    "id": "tech-fc-10",
+    "domain": "techniques",
+    "front": "What are embeddings?",
+    "back": "Numeric vector representations that capture the meaning of text. Similar meanings produce similar vectors, enabling semantic search and similarity used by RAG."
+  },
+  {
+    "id": "tech-fc-11",
+    "domain": "techniques",
+    "front": "What is vector search / a vector database?",
+    "back": "A vector database stores document embeddings; vector search finds the most semantically similar embeddings to a query. This powers the retrieval step in RAG (matching by meaning, not keywords)."
+  },
+  {
+    "id": "tech-fc-12",
+    "domain": "techniques",
+    "front": "What is fine-tuning, and how does it differ from RAG/prompting?",
+    "back": "Further-training a base model on your labeled examples to specialize it. Unlike RAG and prompting, fine-tuning changes the model's weights. Best for consistent style/format/domain behavior prompting can't achieve."
+  },
+  {
+    "id": "tech-fc-13",
+    "domain": "techniques",
+    "front": "What is parameter-efficient tuning (LoRA / adapters)?",
+    "back": "A tuning method that updates only a small part of the model instead of all its parameters, making fine-tuning much cheaper and faster."
+  },
+  {
+    "id": "tech-fc-14",
+    "domain": "techniques",
+    "front": "What is distillation?",
+    "back": "Training a smaller, cheaper 'student' model to imitate a larger model, reducing cost and latency while keeping much of the capability."
+  },
+  {
+    "id": "tech-fc-15",
+    "domain": "techniques",
+    "front": "Decision framework: prompt engineering vs. RAG vs. fine-tuning",
+    "back": "Prompt first (cheapest/fastest). Use RAG when you need current or proprietary facts or to reduce hallucinations without retraining. Fine-tune when you need consistent style/format/domain behavior prompting can't achieve and you have quality labeled data."
+  }
+]

@@ -1,0 +1,19 @@
+---
+import { questionCounts, FLASHCARDS } from "../data";
+import { DOMAINS } from "../data/domains";
+
+const qCounts = questionCounts();
+const cardCounts: Record<string, number> = {};
+for (const d of DOMAINS) cardCounts[d.id] = 0;
+for (const c of FLASHCARDS) cardCounts[c.domain] = (cardCounts[c.domain] ?? 0) + 1;
+
+const totals = JSON.stringify({ questionCounts: qCounts, cardCounts });
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<div data-progress data-base={base} data-totals={totals} class="progress-dash"></div>
+
+<script>
+  import { initProgress } from "../scripts/progress";
+  initProgress();
+</script>

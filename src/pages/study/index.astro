@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { DOMAIN_BY_ID } from "../../data/domains";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const link = (p: string) => `${base}${p}`;
+
+const notes = (await getCollection("study")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<BaseLayout title="Study Notes — GAIL Prep" active="study">
+  <section class="wrap section">
+    <span class="eyebrow">Study</span>
+    <h1>Study notes by domain</h1>
+    <p class="lead">
+      Work through the four domains in order. Each note is written in plain language
+      for business leaders, ends with a glossary and exam tips, and links straight to
+      a quiz so you can test what you just read.
+    </p>
+
+    <div class="study-list">
+      {
+        notes.map((note, i) => {
+          const d = DOMAIN_BY_ID[note.data.domain];
+          return (
+            <a class="card card-pad study-item" href={link(`/study/${note.slug}`)} style={`--accent-domain:${d?.hex ?? "var(--accent)"}`}>
+              <div class="study-num">{String(i + 1).padStart(2, "0")}</div>
+              <div class="study-body">
+                <div class="study-item-head">
+                  <h3>{note.data.title}</h3>
+                  {d && <span class="pill dot" style={`--dot:${d.hex}`}>{d.weight}% of exam</span>}
+                </div>
+                <p>{note.data.summary}</p>
+                <span class="study-meta">📖 {note.data.readingMinutes} min read · Read →</span>
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+
+    {
+      notes.length === 0 && (
+        <div class="card card-pad">
+          <p>Study notes are being generated. Check back shortly.</p>
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    color: var(--text-muted);
+    max-width: 65ch;
+    font-size: 1.05rem;
+  }
+  .section {
+    padding: 2rem 0;
+  }
+  .study-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .study-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    border-left: 4px solid var(--accent-domain);
+    transition: transform 0.1s, box-shadow 0.15s;
+  }
+  .study-item:hover {
+    text-decoration: none;
+    transform: translateX(3px);
+    box-shadow: var(--shadow-lg);
+  }
+  .study-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-domain);
+    line-height: 1;
+    opacity: 0.85;
+  }
+  .study-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .study-item h3 {
+    margin: 0;
+  }
+  .study-item p {
+    color: var(--text-muted);
+    margin: 0.4rem 0 0.6rem;
+  }
+  .study-meta {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

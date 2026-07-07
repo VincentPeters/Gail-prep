@@ -1,0 +1,92 @@
+[
+  {
+    "id": "busi-fc-01",
+    "domain": "business",
+    "front": "What are common high-value generative AI use cases?",
+    "back": "Content creation/marketing, summarization, customer service chatbots/virtual agents, code assistance, enterprise search & knowledge, data analysis/insights, and translation/localization. Prioritize by business value multiplied by feasibility."
+  },
+  {
+    "id": "busi-fc-02",
+    "domain": "business",
+    "front": "How do you measure the value of a gen AI solution?",
+    "back": "Define KPIs and ROI tied to outcomes: productivity, cost savings, revenue, CSAT, and time-to-resolution. Compare value against total cost of ownership (compute, data, integration, change management)."
+  },
+  {
+    "id": "busi-fc-03",
+    "domain": "business",
+    "front": "Build vs. buy: how do you decide?",
+    "back": "Buy off-the-shelf for speed, lower upfront cost, and non-differentiating problems. Build (or heavily customize on a platform like Vertex AI) when the use case is a core competitive advantage needing deep integration and data control."
+  },
+  {
+    "id": "busi-fc-04",
+    "domain": "business",
+    "front": "What are Google's AI Principles?",
+    "back": "Guidelines for responsible AI: be socially beneficial, avoid unfair bias, be built and tested for safety, be accountable to people, incorporate privacy by design, uphold scientific excellence, and be made available for uses consistent with these principles. Google also names uses it will NOT pursue (harm, weapons, norm-violating surveillance, violations of international law/human rights)."
+  },
+  {
+    "id": "busi-fc-05",
+    "domain": "business",
+    "front": "What is fairness / bias in responsible AI?",
+    "back": "Ensuring AI outputs don't unfairly disadvantage groups of people. Leaders test across populations, diversify and clean training data, and monitor outcomes to avoid creating or reinforcing unfair bias."
+  },
+  {
+    "id": "busi-fc-06",
+    "domain": "business",
+    "front": "What is transparency in AI?",
+    "back": "Being open that AI is being used and clear about its capabilities and limitations, including disclosing AI use and documenting the data and its limits."
+  },
+  {
+    "id": "busi-fc-07",
+    "domain": "business",
+    "front": "What is explainability, and how does it differ from transparency?",
+    "back": "Explainability is the deeper ability to understand WHY a model produced a specific decision. Transparency is being open THAT AI is used. Explainability is critical in regulated settings like lending and hiring."
+  },
+  {
+    "id": "busi-fc-08",
+    "domain": "business",
+    "front": "What does privacy by design mean?",
+    "back": "Building data protection into an AI system from the start: minimizing data collected, controlling access, and safeguarding personal and sensitive (PII) data rather than adding privacy as an afterthought."
+  },
+  {
+    "id": "busi-fc-09",
+    "domain": "business",
+    "front": "What is SAIF?",
+    "back": "Google's Secure AI Framework — a structured approach to securing AI systems against risks such as prompt injection, data leakage, and model attacks."
+  },
+  {
+    "id": "busi-fc-10",
+    "domain": "business",
+    "front": "What is prompt injection?",
+    "back": "A security attack where malicious instructions hidden in an input trick a model into ignoring its guardrails, behaving unsafely, or leaking data. It is a key AI security risk addressed by frameworks like SAIF."
+  },
+  {
+    "id": "busi-fc-11",
+    "domain": "business",
+    "front": "What is accountability in responsible AI?",
+    "back": "Clear human ownership of AI outcomes. Organizations name responsible owners, keep audit trails, and provide ways for affected people to seek redress. AI systems should be accountable to people."
+  },
+  {
+    "id": "busi-fc-12",
+    "domain": "business",
+    "front": "What is human-in-the-loop and when is it required?",
+    "back": "Keeping qualified people reviewing and approving AI output. It is essential for high-stakes decisions (lending, hiring, medical, legal): AI drafts and recommends, a human reviews and decides."
+  },
+  {
+    "id": "busi-fc-13",
+    "domain": "business",
+    "front": "What are data governance, residency, and sovereignty?",
+    "back": "Data governance is controlling how data is stored, accessed, and used. Data residency/sovereignty concerns where data physically lives and which jurisdiction's laws apply. Enterprise platforms offer controls and data-residency options to meet these requirements."
+  },
+  {
+    "id": "busi-fc-14",
+    "domain": "business",
+    "front": "What are IP and copyright risks with generative AI?",
+    "back": "Uncertainty over who owns AI-generated content and concerns about the provenance of training data, including reproducing copyrighted material. Leaders set governance policy on usage rights, provenance, and human review of outputs."
+  },
+  {
+    "id": "busi-fc-15",
+    "domain": "business",
+    "front": "What does successful change management for AI adoption require?",
+    "back": "Executive sponsorship, starting with pilots before scaling, upskilling employees, fostering an AI-ready culture, and measuring outcomes against defined KPIs. Also weigh sustainability, since AI compute consumes energy."
+  }
+]
