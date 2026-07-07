@@ -1,10 +1,11 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Deploy whenever the site changes on the main branch...
+  # Deploy whenever the site changes on main (and the working branch, which the
+  # github-pages environment already trusts) ...
   push:
-    branches: [main]
-  # ...and allow manual runs from the Actions tab (useful for feature branches).
+    branches: [main, claude/gail-cert-learning-site-8w59pv]
+  # ...and allow manual runs from the Actions tab.
   workflow_dispatch:
 
 permissions:
